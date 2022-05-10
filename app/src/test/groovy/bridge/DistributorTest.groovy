@@ -3,17 +3,21 @@
  */
 package bridge
 
-import spock.lang.Specification
+import ca.attractors.deck.Card
+import ca.attractors.deck.Deck
+import org.junit.jupiter.api.Test;
 
-class AppTest extends Specification {
-    def "application has a greeting"() {
-        setup:
-        def app = new App()
-
-        when:
-        def result = app.greeting
-
-        then:
-        result != null
+class DistributorTest {
+    @Test void testX() {
+        def distributor = new Distributor()
+        def setup = { Distributor distributor1 ->
+//            distributor.addNorth(Card.getAceOfClubs())
+//            println("In Setup")
+        }
+        distributor.setCondition {
+            it.getNorth().contains(Card.getKingOfSpades())
+        }
+        distributor.setSetUp(setup)
+        distributor.simulate()
     }
 }

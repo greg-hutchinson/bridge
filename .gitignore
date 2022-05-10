@@ -1,0 +1,15 @@
+
+.DS_Store
+
+.idea/
+
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+bin
+
+blackjack-solution/lib/cards.jar
+
+zip-files/
