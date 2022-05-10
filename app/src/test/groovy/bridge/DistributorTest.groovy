@@ -6,16 +6,27 @@ package bridge
 import ca.attractors.deck.Card
 import ca.attractors.deck.Deck
 import org.junit.jupiter.api.Test;
+import static ca.attractors.deck.Card.*
+
 
 class DistributorTest {
     @Test void testX() {
         def distributor = new Distributor()
         def setup = { Distributor distributor1 ->
-//            distributor.addNorth(Card.getAceOfClubs())
-//            println("In Setup")
+            def cards = distributor.getCards()
+            cards.remove(getKingOfSpades())
+            cards.remove(getDeuceOfSpades())
+            distributor.addNorthCards(getAceOfSpades(), getQueenOfSpades(), getJackOfSpades(), getNineOfSpades(), getEightOfSpades())
+            distributor.addSouthCards(getTenOfSpades(), getThreeOfSpades(), getFourOfSpades(), getFiveOfSpades(), getSixOfSpades(), getSevenOfSpades())
+            distributor.fillNorth()
+            distributor.fillSouth()
+            cards.add(getKingOfSpades())
+            cards.add(getDeuceOfSpades())
+            Collections.shuffle(cards)
         }
+
         distributor.setCondition {
-            it.getNorth().contains(Card.getKingOfSpades())
+            it.getEast().containsAll(getKingOfSpades(),getDeuceOfSpades()) || it.getEast().containsNone(getKingOfSpades(), getDeuceOfSpades())
         }
         distributor.setSetUp(setup)
         distributor.simulate()

@@ -35,13 +35,25 @@ class Distributor {
 
     private void initialize() {
         cards = deck()
-        north = new ArrayList<Card>()
-        east = new ArrayList<Card>()
-        south = new ArrayList<Card>()
-        west = new ArrayList<Card>()
+        north = new Hand()
+        east = new Hand()
+        south = new Hand()
+        west = new Hand()
         setUp(this)
         deal()
     }
+
+    def void fillNorth() {
+        while (north.size() < 13) {
+            north.add(cards.remove(0))
+        }
+    }
+    def void fillSouth() {
+        while (south.size() < 13) {
+            south.add(cards.remove(0))
+        }
+    }
+
 
     def void deal() {
         def compass = [north, east, south, west]
@@ -52,17 +64,17 @@ class Distributor {
         }
     }
 
-    void addNorth(Card aCard) {
-        cards.remove(aCard)
-        north.add(aCard)
+    void addNorthCards(Card[] aCards) {
+        cards.removeAll(aCards)
+        north.addAll(aCards)
+    }
+    void addSouthCards(Card[] aCards) {
+        cards.removeAll(aCards)
+        south.addAll(aCards)
     }
     void addWest(Card aCard) {
         cards.remove(aCard)
         west.add(aCard)
-    }
-    void addSouth(Card aCard) {
-        cards.remove(aCard)
-        south.add(aCard)
     }
     void addEast(Card aCard) {
         cards.remove(aCard)
