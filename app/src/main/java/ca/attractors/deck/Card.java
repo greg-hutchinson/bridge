@@ -34,9 +34,12 @@ public class Card implements Comparable<Card> {
 	public boolean isSpade() {
 		return suit == Suit.SPADES;
 	}
-	
+
 	public Value getValue() {
 		return value;
+	}
+	public Suit getSuit() {
+		return suit;
 	}
 
 
@@ -62,7 +65,7 @@ public class Card implements Comparable<Card> {
 		return cards;
 	}
 	
-	public int getRawValue() {
+	public int RawValue() {
 		return value.ordinal() + 1;
 	}
 	
@@ -82,7 +85,7 @@ public class Card implements Comparable<Card> {
 		return suit.hashCode() + value.hashCode();
 	}
 	
-	protected Suit getSuit() {
+	protected Suit Suit() {
 		return suit;
 	}
 	
@@ -94,11 +97,11 @@ public class Card implements Comparable<Card> {
 		return value.ordinal() - anOtherCard.value.ordinal();
 	}
 
-	public ImageIcon getImageIcon() {
-		return new ImageLoader(getImageFilename()).getImageIcon();
+	public ImageIcon ImageIcon() {
+		return new ImageLoader(ImageFilename()).getImageIcon();
 	}
 
-	public String getImageFilename() {
+	public String ImageFilename() {
 		String filename = Integer.toString(asIndex());
 		if (asIndex() < 10)
 			filename = "0" + filename;
@@ -109,61 +112,61 @@ public class Card implements Comparable<Card> {
 		int base = suit.ordinal() * 13; 
 		return base + value.ordinal() + 1;
 	}
-    public static Card getAceOfClubs() {return new Card(Value.ACE, Suit.CLUBS);}
-    public static Card getDeuceOfClubs() {return new Card(Value.DEUCE, Suit.CLUBS);}
-    public static Card getThreeOfClubs() {return new Card(Value.THREE, Suit.CLUBS);}
-    public static Card getFourOfClubs() {return new Card(Value.FOUR, Suit.CLUBS);}
-    public static Card getFiveOfClubs() {return new Card(Value.FIVE, Suit.CLUBS);}
-    public static Card getSixOfClubs() {return new Card(Value.SIX, Suit.CLUBS);}
-    public static Card getSevenOfClubs() {return new Card(Value.SEVEN, Suit.CLUBS);}
-    public static Card getEightOfClubs() {return new Card(Value.EIGHT, Suit.CLUBS);}
-    public static Card getNineOfClubs() {return new Card(Value.NINE, Suit.CLUBS);}
-    public static Card getTenOfClubs() {return new Card(Value.TEN, Suit.CLUBS);}
-    public static Card getJackOfClubs() {return new Card(Value.JACK, Suit.CLUBS);}
-    public static Card getQueenOfClubs() {return new Card(Value.QUEEN, Suit.CLUBS);}
-    public static Card getKingOfClubs() {return new Card(Value.KING, Suit.CLUBS);}
+    public static Card AceOfClubs = new Card(Value.ACE, Suit.CLUBS);
+    public static Card DeuceOfClubs = new Card(Value.DEUCE, Suit.CLUBS);
+    public static Card ThreeOfClubs = new Card(Value.THREE, Suit.CLUBS);
+    public static Card FourOfClubs = new Card(Value.FOUR, Suit.CLUBS);
+    public static Card FiveOfClubs = new Card(Value.FIVE, Suit.CLUBS);
+    public static Card SixOfClubs = new Card(Value.SIX, Suit.CLUBS);
+    public static Card SevenOfClubs = new Card(Value.SEVEN, Suit.CLUBS);
+    public static Card EightOfClubs = new Card(Value.EIGHT, Suit.CLUBS);
+    public static Card NineOfClubs = new Card(Value.NINE, Suit.CLUBS);
+    public static Card TenOfClubs = new Card(Value.TEN, Suit.CLUBS);
+    public static Card JackOfClubs = new Card(Value.JACK, Suit.CLUBS);
+    public static Card QueenOfClubs = new Card(Value.QUEEN, Suit.CLUBS);
+    public static Card KingOfClubs = new Card(Value.KING, Suit.CLUBS);
 
-    public static Card getAceOfDiamonds() {return new Card(Value.ACE, Suit.DIAMONDS);}
-    public static Card getDeuceOfDiamonds() {return new Card(Value.DEUCE, Suit.DIAMONDS);}
-    public static Card getThreeOfDiamonds() {return new Card(Value.THREE, Suit.DIAMONDS);}
-    public static Card getFourOfDiamonds() {return new Card(Value.FOUR, Suit.DIAMONDS);}
-    public static Card getFiveOfDiamonds() {return new Card(Value.FIVE, Suit.DIAMONDS);}
-    public static Card getSixOfDiamonds() {return new Card(Value.SIX, Suit.DIAMONDS);}
-    public static Card getSevenOfDiamonds() {return new Card(Value.SEVEN, Suit.DIAMONDS);}
-    public static Card getEightOfDiamonds() {return new Card(Value.EIGHT, Suit.DIAMONDS);}
-    public static Card getNineOfDiamonds() {return new Card(Value.NINE, Suit.DIAMONDS);}
-    public static Card getTenOfDiamonds() {return new Card(Value.TEN, Suit.DIAMONDS);}
-    public static Card getJackOfDiamonds() {return new Card(Value.JACK, Suit.DIAMONDS);}
-    public static Card getQueenOfDiamonds() {return new Card(Value.QUEEN, Suit.DIAMONDS);}
-    public static Card getKingOfDiamonds() {return new Card(Value.KING, Suit.DIAMONDS);}
+    public static Card AceOfDiamonds = new Card(Value.ACE, Suit.DIAMONDS);
+    public static Card DeuceOfDiamonds = new Card(Value.DEUCE, Suit.DIAMONDS);
+    public static Card ThreeOfDiamonds = new Card(Value.THREE, Suit.DIAMONDS);
+    public static Card FourOfDiamonds = new Card(Value.FOUR, Suit.DIAMONDS);
+    public static Card FiveOfDiamonds = new Card(Value.FIVE, Suit.DIAMONDS);
+    public static Card SixOfDiamonds = new Card(Value.SIX, Suit.DIAMONDS);
+    public static Card SevenOfDiamonds = new Card(Value.SEVEN, Suit.DIAMONDS);
+    public static Card EightOfDiamonds = new Card(Value.EIGHT, Suit.DIAMONDS);
+    public static Card NineOfDiamonds = new Card(Value.NINE, Suit.DIAMONDS);
+    public static Card TenOfDiamonds = new Card(Value.TEN, Suit.DIAMONDS);
+    public static Card JackOfDiamonds = new Card(Value.JACK, Suit.DIAMONDS);
+    public static Card QueenOfDiamonds = new Card(Value.QUEEN, Suit.DIAMONDS);
+    public static Card KingOfDiamonds = new Card(Value.KING, Suit.DIAMONDS);
 
-    public static Card getAceOfHearts() {return new Card(Value.ACE, Suit.HEARTS);}
-    public static Card getDeuceOfHearts() {return new Card(Value.DEUCE, Suit.HEARTS);}
-    public static Card getThreeOfHearts() {return new Card(Value.THREE, Suit.HEARTS);}
-    public static Card getFourOfHearts() {return new Card(Value.FOUR, Suit.HEARTS);}
-    public static Card getFiveOfHearts() {return new Card(Value.FIVE, Suit.HEARTS);}
-    public static Card getSixOfHearts() {return new Card(Value.SIX, Suit.HEARTS);}
-    public static Card getSevenOfHearts() {return new Card(Value.SEVEN, Suit.HEARTS);}
-    public static Card getEightOfHearts() {return new Card(Value.EIGHT, Suit.HEARTS);}
-    public static Card getNineOfHearts() {return new Card(Value.NINE, Suit.HEARTS);}
-    public static Card getTenOfHearts() {return new Card(Value.TEN, Suit.HEARTS);}
-    public static Card getJackOfHearts() {return new Card(Value.JACK, Suit.HEARTS);}
-    public static Card getQueenOfHearts() {return new Card(Value.QUEEN, Suit.HEARTS);}
-    public static Card getKingOfHearts() {return new Card(Value.KING, Suit.HEARTS);}
+    public static Card AceOfHearts = new Card(Value.ACE, Suit.HEARTS);
+    public static Card DeuceOfHearts = new Card(Value.DEUCE, Suit.HEARTS);
+    public static Card ThreeOfHearts = new Card(Value.THREE, Suit.HEARTS);
+    public static Card FourOfHearts = new Card(Value.FOUR, Suit.HEARTS);
+    public static Card FiveOfHearts = new Card(Value.FIVE, Suit.HEARTS);
+    public static Card SixOfHearts = new Card(Value.SIX, Suit.HEARTS);
+    public static Card SevenOfHearts = new Card(Value.SEVEN, Suit.HEARTS);
+    public static Card EightOfHearts = new Card(Value.EIGHT, Suit.HEARTS);
+    public static Card NineOfHearts = new Card(Value.NINE, Suit.HEARTS);
+    public static Card TenOfHearts = new Card(Value.TEN, Suit.HEARTS);
+    public static Card JackOfHearts = new Card(Value.JACK, Suit.HEARTS);
+    public static Card QueenOfHearts = new Card(Value.QUEEN, Suit.HEARTS);
+    public static Card KingOfHearts = new Card(Value.KING, Suit.HEARTS);
 
-    public static Card getAceOfSpades() {return new Card(Value.ACE, Suit.SPADES);}
-    public static Card getDeuceOfSpades() {return new Card(Value.DEUCE, Suit.SPADES);}
-    public static Card getThreeOfSpades() {return new Card(Value.THREE, Suit.SPADES);}
-    public static Card getFourOfSpades() {return new Card(Value.FOUR, Suit.SPADES);}
-    public static Card getFiveOfSpades() {return new Card(Value.FIVE, Suit.SPADES);}
-    public static Card getSixOfSpades() {return new Card(Value.SIX, Suit.SPADES);}
-    public static Card getSevenOfSpades() {return new Card(Value.SEVEN, Suit.SPADES);}
-    public static Card getEightOfSpades() {return new Card(Value.EIGHT, Suit.SPADES);}
-    public static Card getNineOfSpades() {return new Card(Value.NINE, Suit.SPADES);}
-    public static Card getTenOfSpades() {return new Card(Value.TEN, Suit.SPADES);}
-    public static Card getJackOfSpades() {return new Card(Value.JACK, Suit.SPADES);}
-    public static Card getQueenOfSpades() {return new Card(Value.QUEEN, Suit.SPADES);}
-    public static Card getKingOfSpades() {return new Card(Value.KING, Suit.SPADES);}
+    public static Card AceOfSpades = new Card(Value.ACE, Suit.SPADES);
+    public static Card DeuceOfSpades = new Card(Value.DEUCE, Suit.SPADES);
+    public static Card ThreeOfSpades = new Card(Value.THREE, Suit.SPADES);
+    public static Card FourOfSpades = new Card(Value.FOUR, Suit.SPADES);
+    public static Card FiveOfSpades = new Card(Value.FIVE, Suit.SPADES);
+    public static Card SixOfSpades = new Card(Value.SIX, Suit.SPADES);
+    public static Card SevenOfSpades = new Card(Value.SEVEN, Suit.SPADES);
+    public static Card EightOfSpades = new Card(Value.EIGHT, Suit.SPADES);
+    public static Card NineOfSpades = new Card(Value.NINE, Suit.SPADES);
+    public static Card TenOfSpades = new Card(Value.TEN, Suit.SPADES);
+    public static Card JackOfSpades = new Card(Value.JACK, Suit.SPADES);
+    public static Card QueenOfSpades = new Card(Value.QUEEN, Suit.SPADES);
+    public static Card KingOfSpades = new Card(Value.KING, Suit.SPADES);
 
 	
 }

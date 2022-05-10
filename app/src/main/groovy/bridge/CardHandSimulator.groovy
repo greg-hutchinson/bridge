@@ -2,19 +2,19 @@ package bridge
 
 import ca.attractors.deck.Card
 
-class Distributor {
+class CardHandSimulator {
     Closure deck;
     long count = 0
     long iterations = 100000
-    Closure<Distributor> setUp
-    Closure<Distributor> condition
+    Closure<CardHandSimulator> setUp
+    Closure<CardHandSimulator> condition
     List<Card> cards
     List<Card> north = new ArrayList<Card>()
     List<Card> east = new ArrayList<Card>()
     List<Card> south = new ArrayList<Card>()
     List<Card> west = new ArrayList<Card>()
 
-    public Distributor() {
+    public CardHandSimulator() {
         setDeck {
             def cards = Card.getAllCards()
             Collections.shuffle(cards)
