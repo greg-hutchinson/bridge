@@ -19,11 +19,11 @@ class SimulatorDeckTest {
         def north = deck.remove(5, Suit.SPADES) { Card potential ->
             potential != DeuceOfSpades && potential != KingOfSpades
         }
-        deck.fill(north, 13)
+        north.fillFromDeck(deck)
         def south = deck.remove(6, Suit.SPADES) { Card potential ->
             potential != DeuceOfSpades && potential != KingOfSpades
         }
-        deck.fill(south, 13)
+        south.fillFromDeck(deck)
         deck.unreserveAll()
         println (north)
         println (south)

@@ -4,10 +4,9 @@ import ca.attractors.deck.Card
 
 
 class Hand {
-
-
     @Delegate
     List<Card> cards = new ArrayList<Card>()
+
     public Hand(List<Card> cards) {
         this.cards = cards
     }
@@ -30,5 +29,11 @@ class Hand {
                 return false
         }
         return true
+    }
+
+    def void fillFromDeck(SimulatorDeck simulatorDeck) {
+        while(size() <= 13) {
+            cards.add(simulatorDeck.getNextCard())
+        }
     }
 }

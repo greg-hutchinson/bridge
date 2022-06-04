@@ -4,10 +4,22 @@ import ca.attractors.deck.Card
 import ca.attractors.deck.Suit
 
 class SimulatorDeck {
-    private List<Card> cards = new ArrayList<Card>();
+    private List<Card> cards = []
+    private List<Card> reservedCards = []
 
     public SimulatorDeck() {
         cards.addAll(Card.getAllCards())
+    }
+
+    def void unreserveAll() {
+        cards.addAll (reservedCards)
+        reservedCards = []
+    }
+
+    def void reserve(Card ... cardsToReserve) {
+        cardsToReserve.each {
+            reservedCards << cards.remove(it)
+        }
     }
 
     public int getSize() {
